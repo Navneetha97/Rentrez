@@ -1,2 +1,6 @@
-```{r}
-getwd()
+GCcontent<-read.csv(file = "GC_content.csv",header = T,sep = ",")
+library(ggplot2)
+require(reshape2)
+require(ggplot2)
+plot<-ggplot(GCcontent,aes(Species,X.GC))+geom_point()+xlab("Species")+ylab("PercentGC")+ggtitle("PercentGC content for each of the three species")+theme(plot.title = element_text(size = 8))+geom_point(size=0.5)
+plot
